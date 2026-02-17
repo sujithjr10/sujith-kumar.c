@@ -30,7 +30,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Phone</p>
-                <p className="text-sm font-medium text-foreground">+91 XXXXX XXXXX</p>
+                <p className="text-sm font-medium text-foreground">+91  8122158886</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -39,25 +39,25 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Email</p>
-                <p className="text-sm font-medium text-foreground">sujithkumar@example.com</p>
+                <p className="text-sm font-medium text-foreground">c.sujithkumarr@gmail.com</p>
               </div>
             </div>
 
             <div className="flex gap-4 pt-4">
               {[
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Code2, href: "#", label: "LeetCode" },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  className="w-10 h-10 rounded-lg bg-card card-shadow flex items-center justify-center text-muted-foreground hover:text-accent transition-colors"
-                  aria-label={s.label}
-                >
+              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: Github, href: "#", label: "GitHub" },
+              { icon: Code2, href: "#", label: "LeetCode" }].
+              map((s) =>
+              <a
+                key={s.label}
+                href={s.href}
+                className="w-10 h-10 rounded-lg bg-card card-shadow flex items-center justify-center text-muted-foreground hover:text-accent transition-colors"
+                aria-label={s.label}>
+
                   <s.icon size={18} />
                 </a>
-              ))}
+              )}
             </div>
           </div>
 
@@ -69,35 +69,35 @@ const ContactSection = () => {
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition"
-            />
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition" />
+
             <input
               type="email"
               placeholder="Your Email"
               required
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition"
-            />
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition" />
+
             <textarea
               placeholder="Your Message"
               rows={5}
               required
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition resize-none"
-            />
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition resize-none" />
+
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-            >
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
+
               <Send size={16} /> Send Message
             </button>
           </form>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactSection;
