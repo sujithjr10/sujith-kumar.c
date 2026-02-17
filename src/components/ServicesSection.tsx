@@ -12,7 +12,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">My s
+        <h2 className="font-display text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">My Services
           <span className="gradient-text">Services</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
