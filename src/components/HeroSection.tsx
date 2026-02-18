@@ -28,7 +28,8 @@ const HeroSection = () => {
               View Projects <ArrowDown size={16} />
             </a>
             <a
-              href="#"
+              href="/SUJITH_KUMAR_C_RESUME.pdf"
+              download="Sujith_Kumar_C_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
             >
               <Download size={16} /> Download Resume
