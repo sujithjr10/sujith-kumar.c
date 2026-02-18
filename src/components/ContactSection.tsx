@@ -1,14 +1,29 @@
-import { Phone, Mail, Linkedin, Github, Code2, Send } from "lucide-react";
-import { useState } from "react";
+import { Phone, Mail, Linkedin, Github, Code2, Send, Loader2 } from "lucide-react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
+const SERVICE_ID = "service_24ldf1o";
+const TEMPLATE_ID = "template_1s2mfff";
+const PUBLIC_KEY = "4cb2XTwmRruyrmvem";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // placeholder
-    alert("Message sent! (Demo only)");
-    setForm({ name: "", email: "", message: "" });
+    setSending(true);
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY);
+      toast.success("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -62,9 +77,10 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
+              name="user_name"
               placeholder="Your Name"
               required
               value={form.name}
@@ -73,6 +89,7 @@ const ContactSection = () => {
 
             <input
               type="email"
+              name="user_email"
               placeholder="Your Email"
               required
               value={form.email}
@@ -80,6 +97,7 @@ const ContactSection = () => {
               className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 transition" />
 
             <textarea
+              name="message"
               placeholder="Your Message"
               rows={5}
               required
@@ -89,9 +107,10 @@ const ContactSection = () => {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
-
-              <Send size={16} /> Send Message
+              disabled={sending}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity disabled:opacity-50">
+              {sending ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+              {sending ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
