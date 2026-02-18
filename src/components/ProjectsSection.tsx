@@ -8,7 +8,7 @@ const projects = [
   "Computer Vision and Deep Learning based system for real-time gesture recognition and speech output.",
   tags: ["Computer Vision", "Deep Learning", "OpenCV", "TensorFlow"],
   icon: Hand,
-  github: "#"
+  github: "https://github.com/sujithjr10"
 },
 {
   title: "Calorie Burn Prediction Model",
@@ -17,7 +17,7 @@ const projects = [
   "Built with Scikit-learn and Python to predict calorie burn based on physiological parameters.",
   tags: ["Scikit-learn", "Python", "Regression", "ML"],
   icon: Flame,
-  github: "#"
+  github: "https://github.com/sujithjr10"
 }];
 
 
