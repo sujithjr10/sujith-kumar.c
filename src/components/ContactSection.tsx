@@ -60,13 +60,15 @@ const ContactSection = () => {
 
             <div className="flex gap-4 pt-4">
               {[
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Code2, href: "#", label: "LeetCode" }].
+              { icon: Linkedin, href: "https://www.linkedin.com/in/sujithkumarcc", label: "LinkedIn" },
+              { icon: Github, href: "https://github.com/sujithjr10", label: "GitHub" },
+              { icon: Code2, href: "https://leetcode.com/u/sujith_jr/", label: "LeetCode" }].
               map((s) =>
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-card card-shadow flex items-center justify-center text-muted-foreground hover:text-accent transition-colors"
                 aria-label={s.label}>
 
