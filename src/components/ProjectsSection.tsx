@@ -63,11 +63,11 @@ const ProjectsSection = () => {
                   href={p.github}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-accent transition-colors">
 
-                    <ExternalLink size={14} /> GitHub
+                  <ExternalLink size={14} /> GitHub
                   </a>
                   <a
                   href="#"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-accent transition-colors">emo
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-accent transition-colors">
 
                   <Eye size={14} /> Demo
                   </a>
