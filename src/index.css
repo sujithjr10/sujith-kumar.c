@@ -121,19 +121,16 @@
     opacity: 0;
   }
 
-  .animate-fade-up-delay-1 {
-    animation: fadeUp 0.6s ease-out 0.1s forwards;
-    opacity: 0;
-  }
+  /* ... other animation classes ... */
 
-  .animate-fade-up-delay-2 {
-    animation: fadeUp 0.6s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-3 {
-    animation: fadeUp 0.6s ease-out 0.3s forwards;
-    opacity: 0;
+  /* NEW: Hide the Lovable Branding Badge */
+  #lovable-badge, 
+  .lovable-badge,
+  [data-lovable-badge] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
 
