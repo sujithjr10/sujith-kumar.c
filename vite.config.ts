@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // This ensures your assets (CSS/JS) load from the correct GitHub folder
-  base: "/sujith-kumar.c/",
+  // Only set base path for production (GitHub Pages), not for dev/preview
+  base: mode === "production" ? "/sujith-kumar.c/" : "/",
   server: {
     host: "::",
     port: 8080,
