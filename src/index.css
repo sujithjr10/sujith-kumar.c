@@ -8,34 +8,24 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 220 30% 15%;
-
     --card: 220 20% 97%;
     --card-foreground: 220 30% 15%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 220 30% 15%;
-
     --primary: 220 60% 25%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 220 15% 95%;
     --secondary-foreground: 220 30% 15%;
-
     --muted: 220 15% 95%;
     --muted-foreground: 220 10% 50%;
-
     --accent: 190 80% 42%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 220 15% 90%;
     --input: 220 15% 90%;
     --ring: 220 60% 25%;
-
     --radius: 0.75rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -44,7 +34,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
     --gradient-primary: linear-gradient(135deg, hsl(220 60% 25%), hsl(190 80% 42%));
     --gradient-hero: linear-gradient(180deg, hsl(220 30% 97%) 0%, hsl(0 0% 100%) 100%);
     --shadow-card: 0 1px 3px 0 hsl(220 30% 15% / 0.04), 0 1px 2px -1px hsl(220 30% 15% / 0.04);
@@ -83,18 +72,12 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-  }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
 }
 
 @layer utilities {
@@ -102,31 +85,15 @@
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
   }
-
   .card-shadow {
     box-shadow: var(--shadow-card);
     transition: box-shadow 0.3s ease;
   }
-
-  .card-shadow:hover {
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  /* ... other animation classes ... */
-
-  /* NEW: Hide the Lovable Branding Badge */
-  #lovable-badge, 
-  .lovable-badge,
-  [data-lovable-badge] {
+  .card-shadow:hover { box-shadow: var(--shadow-card-hover); }
+  .section-padding { @apply py-20 px-4 sm:px-6 lg:px-8; }
+  
+  /* Hides the "Edit with Lovable" button */
+  #lovable-badge, .lovable-badge, [data-lovable-badge] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -135,12 +102,6 @@
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
