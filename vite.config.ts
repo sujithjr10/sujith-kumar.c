@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Set the base path to your repository name for GitHub Pages
+  // This ensures your assets (CSS/JS) load from the correct GitHub folder
   base: "/sujith-kumar.c/",
   server: {
     host: "::",
@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(), 
+    // This plugin is only used in development; it won't affect your GitHub site
     mode === "development" && componentTagger()
   ].filter(Boolean),
   resolve: {
@@ -23,4 +24,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // This ensures a clean build for GitHub Pages
+    outDir: "dist",
+  }
 }));
